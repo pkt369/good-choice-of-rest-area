@@ -20,7 +20,7 @@ public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "image_seq")
-    private String imageSeq;
+    private Long imageSeq;
 
     @Column(name = "food_seq")
     private Long foodSeq;

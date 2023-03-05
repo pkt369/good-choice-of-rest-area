@@ -6,13 +6,14 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity(name = "food_food_tag")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,11 +25,11 @@ public class FoodTagMiddleTable {
     @Column(name = "food_tag_seq")
     private Long foodTagSeq;
 
-    @Column(name = "food_seq")
+    @JoinColumn(name = "food_seq")
     @ManyToOne(targetEntity = Food.class, fetch = FetchType.LAZY)
     private Long foodSeq;
 
-    @Column(name = "tag_seq")
+    @JoinColumn(name = "tag_seq")
     @ManyToOne(targetEntity = Tag.class, fetch = FetchType.LAZY)
     private Long tagSeq;
 }

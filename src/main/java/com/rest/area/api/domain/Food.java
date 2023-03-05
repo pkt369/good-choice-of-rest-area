@@ -6,6 +6,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
@@ -17,16 +18,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity
+@Entity(name = "food")
 public class Food {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "food_seq")
     private Long foodSeq;
 
-    @Column(name = "rest_area_seq")
-    @ManyToOne(targetEntity = RestArea.class, fetch = FetchType.LAZY)
-    private Long restAreaSeq;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "rest_code")
+    private RestArea restAreaSeq;
 
     @Column(name = "food_name")
     private String foodName;

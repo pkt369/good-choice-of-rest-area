@@ -6,13 +6,14 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity(name = "food_review")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -23,9 +24,9 @@ public class FoodReview {
     @Column(name = "review_seq")
     private Long reviewSeq;
 
-    @Column(name = "food_seq")
     @ManyToOne(targetEntity = Food.class, fetch = FetchType.LAZY)
-    private String foodSeq;
+    @JoinColumn(name = "food_seq")
+    private Long foodSeq;
 
     private String rating;
 
