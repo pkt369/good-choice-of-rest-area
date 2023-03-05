@@ -10,7 +10,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity(name = "food_tag")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,7 +19,7 @@ public class Tag {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "tag_seq")
+    @Column(name = "food_tag_seq")
     private Long tagSeq;
 
     private String name;

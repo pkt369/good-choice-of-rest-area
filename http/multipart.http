@@ -1,0 +1,17 @@
+### Upload
+POST localhost:8080/multipart/abcd
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="cat.jpg"
+Content-Type: image/jpeg
+
+< ./animal.jpg
+--WebAppBoundary
+
+### preview
+GET http://localhost:8080/multipart/abcd/813b11c2-bdc3-4248-8849-9da340a8fa06?flag=preview
+Content-Type: image/jpeg
+
+### download
+GET http://localhost:8080/multipart/abc/f2b8c108-1633-455e-8e38-f14a430c7577?flag=download

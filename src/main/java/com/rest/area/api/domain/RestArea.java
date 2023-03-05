@@ -11,7 +11,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
-@Entity
+@Entity(name = "rest_area")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
