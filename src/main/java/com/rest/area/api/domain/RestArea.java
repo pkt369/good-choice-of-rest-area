@@ -19,7 +19,7 @@ public class RestArea {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "rest_area_seq")
+    @Column(name = "rest_seq")
     private Long restAreaSeq;
 
     @Column(name = "rest_code")

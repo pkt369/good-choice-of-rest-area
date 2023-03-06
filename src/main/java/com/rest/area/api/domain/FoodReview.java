@@ -24,9 +24,9 @@ public class FoodReview {
     @Column(name = "review_seq")
     private Long reviewSeq;
 
-    @ManyToOne(targetEntity = Food.class, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "food_seq")
-    private Long foodSeq;
+    private Food foodSeq;
 
     private String rating;
 

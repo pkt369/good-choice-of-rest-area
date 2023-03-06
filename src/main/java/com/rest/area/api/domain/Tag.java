@@ -10,7 +10,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "food_tag")
+@Entity
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor

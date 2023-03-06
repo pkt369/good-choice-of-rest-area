@@ -26,8 +26,8 @@ public class Food {
     private Long foodSeq;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "rest_code")
-    private RestArea restAreaSeq;
+    @JoinColumn(name = "rest_seq")
+    private RestArea restSeq;
 
     @Column(name = "food_name")
     private String foodName;

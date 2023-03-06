@@ -13,12 +13,12 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "food_food_tag")
+@Entity(name = "food_tag_mapping")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class FoodTagMiddleTable {
+public class FoodTagMapping {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,10 +26,10 @@ public class FoodTagMiddleTable {
     private Long foodTagSeq;
 
     @JoinColumn(name = "food_seq")
-    @ManyToOne(targetEntity = Food.class, fetch = FetchType.LAZY)
-    private Long foodSeq;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Food foodSeq;
 
     @JoinColumn(name = "tag_seq")
-    @ManyToOne(targetEntity = Tag.class, fetch = FetchType.LAZY)
-    private Long tagSeq;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Tag tagSeq;
 }
